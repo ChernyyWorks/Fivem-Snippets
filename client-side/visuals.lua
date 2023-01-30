@@ -14,3 +14,10 @@ function ShowHelpNotification(msg, thisFrame, beep, duration)
         EndTextCommandDisplayHelp(0, false, beep, duration or -1)
     end
 end
+
+-- Native notification
+function notification(text)
+    BeginTextCommandThefeedPost('STRING')
+    AddTextComponentSubstringPlayerName(text)
+    EndTextCommandThefeedPostTicker(0,1)
+end
