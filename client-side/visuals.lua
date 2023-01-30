@@ -22,11 +22,11 @@ function notification(text)
     EndTextCommandThefeedPostTicker(0,1)
 end
 
+-- Event for Server-side
+-- Just need to : TriggerClientEvent("core:notification",playerid,"your cool text")
 RegisterNetEvent("core:notification")
 AddEventHandler("core:notification",function(text)
     if not(text == nil) or string.len(text) > 0 then
         notification(tostring(text))
-    else
-        print("Error notification message : "..text)
     end
 end)
