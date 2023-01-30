@@ -1,4 +1,4 @@
--- These are the visual tools you could use, made standalone (but took from esx)
+-- These are some visual functions, it may seem obvious but it can be useful.
 
 -- Classic Help Notification, you can 
 function ShowHelpNotification(msg, thisFrame, beep, duration)
@@ -21,3 +21,12 @@ function notification(text)
     AddTextComponentSubstringPlayerName(text)
     EndTextCommandThefeedPostTicker(0,1)
 end
+
+RegisterNetEvent("core:notification")
+AddEventHandler("core:notification",function(text)
+    if not(text == nil) or string.len(text) > 0 then
+        notification(tostring(text))
+    else
+        print("Error notification message : "..text)
+    end
+end)
