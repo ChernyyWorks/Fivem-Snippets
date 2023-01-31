@@ -30,3 +30,19 @@ AddEventHandler("core:notification",function(text)
         notification(tostring(text))
     end
 end)
+
+-- Native R* input box (the black rectangle)
+-- title = title (obvious), pretext = default text, maxchar = max char lenght (it will increase/decrease the size of the text-box)
+function TextBoxInput(title, pretext, maxchar)
+	AddTextEntry('FMMC_KEY_TIP1', title)
+	DisplayOnscreenKeyboard(1, "FMMC_KEY_TIP1", "", pretext, "", "", "", maxchar) 
+	while UpdateOnscreenKeyboard() ~= 1 and UpdateOnscreenKeyboard() ~= 2 do Wait(0) end
+	if UpdateOnscreenKeyboard() ~= 2 then
+		local result = GetOnscreenKeyboardResult()
+		Wait(500) 
+		return result
+	else
+		Wait(500) 
+		return nil 
+	end
+end
