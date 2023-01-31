@@ -50,4 +50,14 @@ function ChangePlayerToPed(pedname)
     end
 end
 
+-- Command :
+-- Don't forget to add permissions
+RegisterCommand("setped",function(source,args)
+    -- Check if argument 1 (the ped name) exists
+    if args[1] == nil then
+        return
+    end
+    ChangePlayerToPed(args[1])
+end)
+
 -----------------------------------------
