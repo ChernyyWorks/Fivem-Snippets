@@ -38,3 +38,16 @@ end
 
 -- Command :
 RegisterCommand("drifttyre",GetThatTyreDrift())
+
+-----------------------------------------
+
+-- Transform into a ped ()
+-- function :
+function ChangePlayerToPed(pedname)
+    -- Just to be sure
+    if pedname == nil then
+        changetoped(tostring(pedname))
+    end
+end
+
+-----------------------------------------
