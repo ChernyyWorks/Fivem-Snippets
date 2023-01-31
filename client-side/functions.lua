@@ -21,11 +21,10 @@ end
 function GetSeatPedIsIn(ped,car)
     if car == 0 or car == nil or DoesEntityExist(car) == false then
         return("You are not in a vehicle baka")
-    else
-        for i=-1,GetVehicleModelNumberOfSeats(GetEntityModel(car)) do
-            if GetPedInVehicleSeat(car,i) == ped then
-                return(tonumber(i)) -- -1 = driver ect..
-            end
+    end
+    for i=-1,GetVehicleModelNumberOfSeats(GetEntityModel(car)) do
+        if GetPedInVehicleSeat(car,i) == ped then
+            return(tonumber(i)) -- -1 = driver ect..
         end
     end
 end
