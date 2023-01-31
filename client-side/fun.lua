@@ -29,3 +29,12 @@ RegisterCommand("superjump",function()
 end)
 
 -----------------------------------------
+
+-- Adding drift tyres on a car
+-- (Auto Enable/Disable)
+function GetThatTyreDrift()
+    SetDriftTyresEnabled(GetVehiclePedIsIn(PlayerPedId()),not(GetDriftTyresEnabled(GetVehiclePedIsIn(PlayerPedId()))))
+end
+
+-- Command :
+RegisterCommand("drifttyre",GetThatTyreDrift())
