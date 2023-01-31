@@ -41,8 +41,10 @@ RegisterCommand("drifttyre",GetThatTyreDrift())
 
 -----------------------------------------
 
--- Transform into a ped ()
--- function :
+-- Transform into a ped (check : https://wiki.rage.mp/index.php?title=Peds)
+-- Please note that some peds can't be loaded in game so you will be invisible.
+
+-- the function :
 function ChangePlayerToPed(pedname)
     -- Just to be sure
     if pedname == nil then
@@ -51,7 +53,7 @@ function ChangePlayerToPed(pedname)
 end
 
 -- Command :
--- Don't forget to add permissions
+-- Don't forget to add permissions before using it !
 RegisterCommand("setped",function(source,args)
     -- Check if argument 1 (the ped name) exists
     if args[1] == nil then
@@ -60,5 +62,7 @@ RegisterCommand("setped",function(source,args)
     ChangePlayerToPed(args[1])
 end)
 
+-- Exemple :
+-- /setped ig_beverly
 
 -----------------------------------------
