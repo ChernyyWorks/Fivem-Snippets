@@ -1,4 +1,6 @@
+-----------------------------------------
 -- These are some tools you can use in your code
+-----------------------------------------
 
 -- Return a boolean if player is godmode or not
 function IsGodMode(player)
@@ -8,6 +10,8 @@ function IsGodMode(player)
     return(GetPlayerInvincible_2(player))
 end
 
+-----------------------------------------
+
 -- Returns the sex (m/f) of the ped
 function GetMySex(ped)
     if GetEntityModel(ped) == GetHashKey("mp_m_freemode_01") then
@@ -16,6 +20,8 @@ function GetMySex(ped)
         return("f")
     end
 end
+
+-----------------------------------------
 
 -- Return the seat index of the seat that the player is on.
 function GetSeatPedIsIn(ped,car)
@@ -28,3 +34,5 @@ function GetSeatPedIsIn(ped,car)
         end
     end
 end
+
+-----------------------------------------

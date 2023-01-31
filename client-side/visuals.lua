@@ -1,4 +1,6 @@
+-----------------------------------------
 -- These are some visual functions, it may seem obvious but it can be useful.
+-----------------------------------------
 
 -- Classic Help Notification, you can 
 function ShowHelpNotification(msg, thisFrame, beep, duration)
@@ -15,12 +17,16 @@ function ShowHelpNotification(msg, thisFrame, beep, duration)
     end
 end
 
+-----------------------------------------
+
 -- Native notification
 function notification(text)
     BeginTextCommandThefeedPost('STRING')
     AddTextComponentSubstringPlayerName(text)
     EndTextCommandThefeedPostTicker(0,1)
 end
+
+-----------------------------------------
 
 -- Event for Server-side
 -- Just need to : TriggerClientEvent("core:notification",playerid,"your cool text")
@@ -30,6 +36,8 @@ AddEventHandler("core:notification",function(text)
         notification(tostring(text))
     end
 end)
+
+-----------------------------------------
 
 -- Native R* input box (the black rectangle)
 -- title = title (obvious), pretext = default text, maxchar = max char lenght (it will increase/decrease the size of the text-box)
@@ -46,3 +54,5 @@ function TextBoxInput(title, pretext, maxchar)
 		return nil 
 	end
 end
+
+-----------------------------------------
