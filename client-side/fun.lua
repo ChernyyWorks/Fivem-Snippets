@@ -48,7 +48,14 @@ RegisterCommand("drifttyre",GetThatTyreDrift())
 function ChangePlayerToPed(pedname)
     -- Just to be sure
     if pedname == nil then
-        changetoped(tostring(pedname))
+        local player = PlayerId()
+        local pedwanted = GetHashKey(pedname)
+        RequestModel(pedwanted)
+        while not HasModelLoaded(pedwanted) do
+            Citizen.Wait(100)
+        end
+        SetPlayerModel(player, pedwanted)
+        SetModelAsNoLongerNeeded(pedwanted)
     end
 end
 
