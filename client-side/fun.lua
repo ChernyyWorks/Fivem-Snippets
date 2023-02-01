@@ -65,7 +65,13 @@ RegisterCommand("setped",function(source,args)
     if args[1] == nil then
         return
     end
-    ChangePlayerToPed(args[1])
+    local chosenped = GetHashKey(args[1])
+    RequestModel(chosenped)
+    while not HasModelLoaded(chosenped) do
+        Citizen.Wait(100)
+    end
+    SetPlayerModel(PlayerId(), chosenped)
+    SetModelAsNoLongerNeeded(chosenped)
 end)
 
 -- Exemple :
